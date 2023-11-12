@@ -4,7 +4,7 @@
 
 ##### 基于 python3
 
-直接使用 python3 运行即可
+直接使用 python3 运行 main 即可
 
 ##### 使用说明
 
