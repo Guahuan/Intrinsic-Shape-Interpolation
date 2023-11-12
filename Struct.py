@@ -12,6 +12,15 @@ class Point:
     def __str__(self):
         return f"({self.x}, {self.y})"
 
+    def __add__(self, other):
+        return Point(self.x + other.x, self.y + other.y)
+
+    def __mul__(self, other):
+        return Point(self.x * other, self.y * other)
+
+    def __rmul__(self, other):
+        return Point(self.x * other, self.y * other)
+
 
 class Vector:
     def __init__(self, x, y):
@@ -43,7 +52,7 @@ class Vector:
         return math.acos(self.dot(other) / (self.norm() * other.norm()))
 
     # 有向夹角
-    def angle_signed(self, other):
+    def signAngle(self, other):
         return math.atan2(self.cross(other), self.dot(other))
 
 
