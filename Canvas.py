@@ -8,10 +8,10 @@ from matplotlib.backend_bases import MouseButton
 
 
 class Canvas:
-    def __init__(self):
+    def __init__(self, frame=10):
         self.fig, self.ax = plt.subplots()
         self.scatter, = self.ax.plot([], [], marker='o', color='green')
-        self.all_frame = 10
+        self.all_frame = frame
         self.animation = None
         self.fig.canvas.mpl_connect("button_press_event", self.onMousePress)
         self.fig.canvas.mpl_connect("key_press_event", self.onKeyPress)
