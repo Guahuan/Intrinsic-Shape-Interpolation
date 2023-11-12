@@ -58,7 +58,7 @@ class Vector:
 
 class Polygon:
     # 点按照从左下角、顺时针方向保存
-    def __init__(self, points: list):
+    def __init__(self, points: list = []):
         self.points = points
 
     def __repr__(self):
@@ -69,7 +69,7 @@ class Polygon:
 
 
 class Turtle:
-    def __init__(self, p_0: Point, theta: list, L: list):
+    def __init__(self, p_0: Point = None, theta: list = [], L: list = []):
         self.p_0 = p_0
         self.theta = theta
         self.L = L
