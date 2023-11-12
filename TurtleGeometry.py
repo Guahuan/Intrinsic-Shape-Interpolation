@@ -35,8 +35,10 @@ def turtle2Polygon(turtle: Turtle):
     points = []
     points.append(turtle.p_0)
     alpha = turtle.theta[0]
-    for i in range(1, len(turtle.L)):
+    for i in range(1, len(turtle.L) + 1):
         points.append(Point(points[i - 1].x + turtle.L[i - 1] * math.cos(alpha),
                             points[i - 1].y + turtle.L[i - 1] * math.sin(alpha)))
-        alpha += turtle.theta[i]
+        if i < len(turtle.L):
+            alpha += turtle.theta[i]
+
     return Polygon(points)

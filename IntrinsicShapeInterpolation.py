@@ -13,5 +13,4 @@ def intrinsicShapeInterpolation(t, turtle_A: Turtle, turtle_B: Turtle):
 
     for i in range(0, len(turtle_A.L)):
         L.append((1 - t) * turtle_A.L[i] + t * turtle_B.L[i] + S[i])
-        # L.append((1 - t) * turtle_A.L[i] + t * turtle_B.L[i])
     return Turtle(p_0, theta, L)
