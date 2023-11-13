@@ -5,6 +5,7 @@ from Canvas import *
 # - 使用鼠标左键点击选点进行绘制
 # - 使用回车键进行流程切换
 # - 使用退格键进行点的撤销
+# - 使用空格键进行gif保存
 # - 部分提示在控制台输出
 draw = Canvas(frame=10)
 plt.show()

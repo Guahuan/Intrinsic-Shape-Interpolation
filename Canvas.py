@@ -77,7 +77,6 @@ class Canvas:
             1, self.all_frame), interval=200, repeat=True)
 
         self.fig.canvas.draw()
-        self.animation.save('animation.gif')
 
     def onMousePress(self, event):
         if event.inaxes:
@@ -144,6 +143,9 @@ class Canvas:
                 self.drawPolygon()
             elif self.model == "darw_C":
                 pass
+        if event.key == ' ':
+            if self.model == "darw_C":
+                self.animation.save('animation.gif')
 
     def update(self, frame):
         self.ax.cla()
