@@ -2,9 +2,11 @@
 
 基于内在形状插值的多边形渐变方法
 
+Github：https://github.com/Guahuan/Intrinsic-Shape-Interpolation.git
+
 ##### 基于 python3
 
-依赖于matplotlib库
+依赖于**matplotlib**库
 
 ```shell
 pip3 install matplotlib
