@@ -1,10 +1,10 @@
-from turtle import color
-from IntrinsicShapeInterpolation import *
-from TurtleGeometry import *
-from Struct import *
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 from matplotlib.backend_bases import MouseButton
+
+from IntrinsicShapeInterpolation import *
+from TurtleGeometry import *
+from Struct import *
 
 
 class Canvas:
