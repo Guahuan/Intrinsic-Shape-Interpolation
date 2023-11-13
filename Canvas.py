@@ -74,7 +74,7 @@ class Canvas:
         self.turtle_B = polygon2Turtle(self.polygon_B)
 
         self.animation = FuncAnimation(self.fig, self.update, frames=range(
-            1, self.all_frame), interval=200, repeat=True)
+            0, self.all_frame + 1), interval=200, repeat=True)
 
         self.fig.canvas.draw()
 
