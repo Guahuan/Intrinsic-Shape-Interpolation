@@ -21,8 +21,12 @@ def lagrangeMultiplier(t, theta: list, turtle_A: Turtle, turtle_B: Turtle):
         V += ((1 - t) * turtle_A.L[i] + t * turtle_B.L[i]) * math.sin(alpha)
     U *= 2
     V *= 2
-    lambda_1 = (U * G - V * F) / (E * G - F * F)
-    lambda_2 = (E * V - F * U) / (E * G - F * F)
+    if E * G - F * F == 0:
+        lambda_1 = 0
+        lambda_2 = 0
+    else:
+        lambda_1 = (U * G - V * F) / (E * G - F * F)
+        lambda_2 = (E * V - F * U) / (E * G - F * F)
     alpha = 0
     for i in range(0, len(turtle_A.L)):
         L_AB = max(abs(turtle_A.L[i] - turtle_B.L[i]), L_tol)
