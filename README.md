@@ -4,13 +4,23 @@
 
 ##### 基于 python3
 
+依赖于matplotlib库
+
+```shell
+pip3 install matplotlib
+```
+
 直接使用 python3 运行 main 即可
+
+```shell
+your/python3/address/python3 "this/folder/address/Intrinsic Shape Interpolation/main.py"
+```
 
 ##### 使用说明
 
-- 流程：绘制多边形 A -> 绘制多边形 B -> 绘制动画
-- 使用鼠标左键点击选点进行绘制
-- 使用回车键进行流程切换
-- 使用退格键进行点的撤销
-- 使用空格键进行 gif 保存
-- 部分提示在控制台输出
+- **流程：**绘制多边形 A -> 绘制多边形 B -> 绘制动画
+- **鼠标左键：**点击选点进行绘制
+- **回车键：**进行流程切换
+- **退格键：**进行点的撤销
+- **空格键：**进行 gif 动画保存
+- **控制台：**输出部分提示
