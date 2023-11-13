@@ -146,7 +146,7 @@ class Canvas:
 
         if event.key == ' ':
             if self.model == "darw_C":
-                self.animation.save('animation.gif')
+                self.animation.save('gif/animation.gif')
 
     def update(self, frame):
         self.ax.cla()

@@ -13,7 +13,13 @@ pip3 install matplotlib
 直接使用 python3 运行 main 即可
 
 ```shell
-your/python3/address/python3 "this/folder/address/Intrinsic Shape Interpolation/main.py"
+your/python3/address/python3 "this/folder/address/Intrinsic Shape Interpolation/src/main.py"
+```
+
+不建议使用编译好的程序，大概率会发生问题
+
+```shell
+this/folder/address/Intrinsic Shape Interpolation/dist/main
 ```
 
 ##### 使用说明
