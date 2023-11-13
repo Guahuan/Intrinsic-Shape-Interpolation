@@ -143,6 +143,7 @@ class Canvas:
                 self.drawPolygon()
             elif self.model == "darw_C":
                 pass
+
         if event.key == ' ':
             if self.model == "darw_C":
                 self.animation.save('animation.gif')
