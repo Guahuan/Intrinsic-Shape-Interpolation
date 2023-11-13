@@ -14,6 +14,7 @@ class Canvas:
         self.all_frame = frame
         self.animation = None
         self.fig.canvas.mpl_connect("button_press_event", self.onMousePress)
+        self.fig.canvas.mpl_connect("motion_notify_event", self.onMouseMove)
         self.fig.canvas.mpl_connect("key_press_event", self.onKeyPress)
 
         self.init()
@@ -92,12 +93,32 @@ class Canvas:
                 elif self.model == "darw_C":
                     pass
 
+    def onMouseMove(self, event):
+        if event.inaxes:
+            if self.model == "darw_A":
+                if len(self.polygon_A.points) > 0:
+                    self.polygon_A.points.pop()
+                self.polygon_A.points.append(
+                    Point(event.xdata, event.ydata))
+                self.drawPolygon()
+            elif self.model == "darw_B":
+                if len(self.polygon_B.points) > 0:
+                    self.polygon_B.points.pop()
+                self.polygon_B.points.append(
+                    Point(event.xdata, event.ydata))
+                self.drawPolygon()
+            elif self.model == "darw_C":
+                pass
+
     def onKeyPress(self, event):
         if event.key == 'enter':
             if self.model == "darw_A":
+                if len(self.polygon_A.points) > 0:
+                    self.polygon_A.points.pop()
                 self.model = "darw_B"
-
             elif self.model == "darw_B":
+                if len(self.polygon_B.points) > 0:
+                    self.polygon_B.points.pop()
                 if len(self.polygon_A.points) == 0 or len(self.polygon_A.points) == 0:
                     print("Error: Not draw polygon A or B")
                     self.init()
@@ -110,10 +131,19 @@ class Canvas:
                 else:
                     self.drawAnimation()
                     self.model = "darw_C"
-
             elif self.model == "darw_C":
                 self.init()
                 self.model = "darw_A"
+
+        if event.key == 'backspace':
+            if self.model == "darw_A":
+                self.polygon_A.points.pop()
+                self.drawPolygon()
+            elif self.model == "darw_B":
+                self.polygon_B.points.pop()
+                self.drawPolygon()
+            elif self.model == "darw_C":
+                pass
 
     def update(self, frame):
         self.ax.cla()
